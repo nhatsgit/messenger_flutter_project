@@ -27,7 +27,7 @@ class _ChatScreenState extends State<ChatScreen> {
     '?',
     'ABCDEFGHKLSLAKSKDKẠHSDHHẠHFạhJHJHJHHẠHFSJHFJHSJHFJHAHHJF'
         'shdhahdhahdhsahdhahdh',
-    'HEHEHEHEHHEHEHEHxx',
+    'HEHEHEHEHHEHEHEHxxhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh',
     'ZzZzZZZZZZZ',
     'avcca',
     'zzzzzzzzzzzzzzzzzzzzzz',
@@ -44,15 +44,16 @@ class _ChatScreenState extends State<ChatScreen> {
     'bái bai'
   ];
   List<List<String>> listConversation = [];
+
   bool isMyMessage = true;
+
   @override
   void initState() {
-      listConversation.add(conversation1);
-      listConversation.add(conversation2);
+    listConversation.add(conversation1);
+    listConversation.add(conversation2);
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
-
     });
   }
 
@@ -92,13 +93,14 @@ class _ChatScreenState extends State<ChatScreen> {
             ),
             Expanded(
               flex: 30,
-              child: Container(            
+              child: Container(
                   color: backgroundColor,
                   child: ListView.builder(
                       controller: _scrollController,
                       itemCount: listConversation.length,
                       itemBuilder: (context, index) {
-                        return _conversationAtTime(listConversation[index],widget.myFriend.lastTime);
+                        return _conversationAtTime(
+                            listConversation[index], widget.myFriend.lastTime);
                       })),
             ),
             const Expanded(
@@ -170,17 +172,19 @@ class _ChatScreenState extends State<ChatScreen> {
 
   Widget _myBoxMessage(String content) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        const Expanded(flex: 2, child: SizedBox()),
-        Expanded(
-          flex: 12,
+        Flexible(
           child: Container(
-            margin: const EdgeInsets.only(top: 10, right: 10),
+            margin: const EdgeInsets.only(top: 10, right: 10, left: 70),
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
                 color: contentColor2, borderRadius: BorderRadius.circular(15)),
-            child: Text(content,
-                style: const TextStyle(color: Colors.white)),
+            child: Text(
+              content,
+              style: const TextStyle(color: Colors.white),
+              maxLines: 5,
+            ),
           ),
         ),
       ],
@@ -190,23 +194,20 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget _friendBoxMessage(String content) {
     return Row(
       children: [
-        Expanded(
-          flex: 14,
+        Flexible(
           child: Container(
-            margin: const EdgeInsets.only(top: 10, left: 10),
+            margin: const EdgeInsets.only(top: 10, left: 10, right: 50),
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
                 color: contentColor, borderRadius: BorderRadius.circular(15)),
-            child:
-                Text(content, style: const TextStyle(color: Colors.white)),
+            child: Text(content, style: const TextStyle(color: Colors.white)),
           ),
         ),
-        const Expanded(flex: 2, child: SizedBox()),
       ],
     );
   }
 
-  Widget _conversationAtTime(List<String> conversation,DateTime time) {
+  Widget _conversationAtTime(List<String> conversation, DateTime time) {
     return ListView.builder(
         itemCount: conversation.length,
         shrinkWrap: true,
