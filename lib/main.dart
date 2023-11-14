@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:messenger/chat_screen.dart';
 import 'package:messenger/model.dart';
+import 'package:messenger/settings_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,8 +31,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Color backgroundColor = const Color.fromARGB(500, 28, 33, 45);
-  Color contentColor = const Color.fromARGB(255, 41, 48, 64);
+
 
     @override
   void initState() {
@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          color: backgroundColor,
+          color: MyColor.backgroundColor,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,7 +66,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           fontWeight: FontWeight.bold,
                           fontSize: 25.0)),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const SettingsScreen()));
+                    },
                     icon: const Icon(Icons.search),
                     color: Colors.white,
                     iconSize: 30,
@@ -94,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(40),
-                      color: contentColor),
+                      color: MyColor.contentColor),
                   child: ListView.builder(
                     itemCount: MyAccount.listFriend.length,
                     itemBuilder: (context, index) {

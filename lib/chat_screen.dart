@@ -11,9 +11,7 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
-  final Color backgroundColor = const Color.fromARGB(500, 28, 33, 45);
-  final Color contentColor = const Color.fromARGB(255, 41, 48, 64);
-  final Color contentColor2 = const Color.fromARGB(255, 123, 128, 149);
+
   final TextEditingController _txtMessCtrl = TextEditingController();
   final ScrollController _scrollController = ScrollController();
   final FocusNode _focusNode = FocusNode();
@@ -60,7 +58,7 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: MyColor.backgroundColor,
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -94,7 +92,7 @@ class _ChatScreenState extends State<ChatScreen> {
             Expanded(
               flex: 30,
               child: Container(
-                  color: backgroundColor,
+                  color: MyColor.backgroundColor,
                   child: ListView.builder(
                       controller: _scrollController,
                       itemCount: listConversation.length,
@@ -114,7 +112,7 @@ class _ChatScreenState extends State<ChatScreen> {
         color: Colors.black,
         child: Container(
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30), color: contentColor),
+              borderRadius: BorderRadius.circular(30), color: MyColor.contentColor),
           margin: const EdgeInsets.all(10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -123,7 +121,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 margin: const EdgeInsets.fromLTRB(10, 5, 20, 5),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
-                    color: contentColor2),
+                    color: MyColor.contentColor2),
                 width: 30,
                 height: 30,
                 child: IconButton(
@@ -179,7 +177,7 @@ class _ChatScreenState extends State<ChatScreen> {
             margin: const EdgeInsets.only(top: 10, right: 10, left: 70),
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-                color: contentColor2, borderRadius: BorderRadius.circular(15)),
+                color: MyColor.contentColor2, borderRadius: BorderRadius.circular(15)),
             child: Text(
               content,
               style: const TextStyle(color: Colors.white),
@@ -199,7 +197,7 @@ class _ChatScreenState extends State<ChatScreen> {
             margin: const EdgeInsets.only(top: 10, left: 10, right: 50),
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-                color: contentColor, borderRadius: BorderRadius.circular(15)),
+                color: MyColor.contentColor, borderRadius: BorderRadius.circular(15)),
             child: Text(content, style: const TextStyle(color: Colors.white)),
           ),
         ),
@@ -221,7 +219,7 @@ class _ChatScreenState extends State<ChatScreen> {
               children: [
                 Text(
                   DateFormat('dd/MM/yyyy').format(time),
-                  style: TextStyle(color: contentColor2),
+                  style: TextStyle(color: MyColor.contentColor2),
                 ),
                 _myBoxMessage(conversation[index]),
               ],

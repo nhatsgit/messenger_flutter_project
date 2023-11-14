@@ -25,3 +25,8 @@ class MyAccount{
     Friend(name: 'Pengu', avatar: Image.asset('assets/image/9.png'), lastChat: 'Lan cuoi chat', lastTime: DateTime.now()),
   ];
 }
+class MyColor{
+  static Color backgroundColor = const Color.fromARGB(500, 28, 33, 45);
+  static Color contentColor = const Color.fromARGB(255, 41, 48, 64);
+  static Color contentColor2 = const Color.fromARGB(255, 123, 128, 149);
+}
