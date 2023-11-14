@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     onPressed: () {
                       Navigator.push(context, MaterialPageRoute(builder: (context)=>const SettingsScreen()));
                     },
-                    icon: const Icon(Icons.search),
+                    icon: const Icon(Icons.settings),
                     color: Colors.white,
                     iconSize: 30,
                   )
