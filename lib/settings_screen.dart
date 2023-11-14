@@ -24,7 +24,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     children: [
                       Container(
                         margin: const EdgeInsets.only(
-                            left: 20,top:20, bottom: 20),
+                            left: 20, top: 20, bottom: 20),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             color: MyColor.contentColor2),
@@ -67,9 +67,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text(
-                            'Theme',
-                          ),
+                          const Text('Theme',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              )),
                           IconButton(
                               onPressed: () {},
                               icon: const Icon(Icons.keyboard_arrow_right))
@@ -78,9 +80,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text(
-                            'Font Size',
-                          ),
+                          const Text('Font Size',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              )),
                           IconButton(
                               onPressed: () {},
                               icon: const Icon(Icons.keyboard_arrow_right))
@@ -89,9 +93,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text(
-                            'Delay sending',
-                          ),
+                          const Text('Delay sending',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              )),
                           IconButton(
                               onPressed: () {},
                               icon: const Icon(Icons.keyboard_arrow_right))
@@ -100,9 +106,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text(
-                            'Swipe Actions',
-                          ),
+                          const Text('Swipe Actions',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              )),
                           IconButton(
                               onPressed: () {},
                               icon: const Icon(Icons.keyboard_arrow_right))
@@ -114,64 +122,72 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text(
-                            'Night Mode',
-                          ),
+                          const Text('Night Mode',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              )),
                           Switch(
                             value: true,
                             onChanged: (value) {
-                              setState(() {
-                                
-                              });
+                              setState(() {});
                             },
+                            activeTrackColor: Colors.black87,
+                            activeColor: Colors.white,
                           )
                         ],
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text(
-                            'Notification',
-                          ),
+                          const Text('Notification',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              )),
                           Switch(
                             value: false,
                             onChanged: (value) {
-                              setState(() {
-                                
-                              });
+                              setState(() {});
                             },
+                            activeTrackColor: Colors.black87,
+                            activeColor: Colors.white,
                           )
                         ],
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text(
-                            'Automatic contact colors',
-                          ),
+                          const Text('Automatic contact colors',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              )),
                           Switch(
                             value: true,
                             onChanged: (value) {
-                              setState(() {
-                                
-                              });
+                              setState(() {});
                             },
+                            activeTrackColor: Colors.black87,
+                            activeColor: Colors.white,
                           )
                         ],
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text(
-                            'Use system font',
-                          ),
+                          const Text('Use system font',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              )),
                           Switch(
                             value: false,
                             onChanged: (value) {
-                              setState(() {
-                                
-                              });
+                              setState(() {});
                             },
+                            activeTrackColor: Colors.black87,
+                            activeColor: Colors.white,
                           )
                         ],
                       ),
