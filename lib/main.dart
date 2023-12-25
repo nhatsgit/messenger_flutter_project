@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:messenger/chat_screen.dart';
 import 'package:messenger/model.dart';
 import 'package:messenger/settings_screen.dart';
+import 'package:messenger/test_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -60,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text('Messages',
+                  const Text('Messenger Fake',
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -70,6 +71,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       Navigator.push(context, MaterialPageRoute(builder: (context)=>const SettingsScreen()));
                     },
                     icon: const Icon(Icons.settings),
+                    color: Colors.white,
+                    iconSize: 30,
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const TestScreen()));
+                    },
+                    icon: const Icon(Icons.apps_rounded),
                     color: Colors.white,
                     iconSize: 30,
                   )
